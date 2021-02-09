@@ -1,0 +1,11 @@
+[Unit]
+Description=alert service - alerts when someone logs in via ssh or use sudo
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/.sshudo/sshudo_alert.py
+EnvironmentFile=/home/pi/.sshudo/vars.env
+Restart=always
